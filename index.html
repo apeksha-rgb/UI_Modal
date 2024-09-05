@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"  >
+</head>
+<body>
+    <!-- Section : will server as Modal Container -->
+    <section class="modal hidden">
+        <div class="flex">
+            <img src="profile.jpeg"  height="100px">
+            <button class="btn-close">X</button>
+        </div>
+        <div>
+            <h1>Stay in touch</h1>
+            <p>To make Collaboration You can Drop a message.  </p>
+        </div>
+
+        <input type="text" id="msg" placeholder="Drop a message">
+        <button class="btn">Send</button>
+    </section>
+    <!-- Section : will server as Modal Container -->
+
+    <!-- Overlay : will serve as overlay element -->
+    <div class="overlay hidden"></div>
+    <!-- Overlay : will serve as overlay element -->
+
+    <!-- Button : fires up  our model when  button is clicked-->
+    <button class="btn btn-open">Open Modal</button>
+    <!-- Button : fires up  our model when  button is clicked-->
+
+</body>
+<script>
+    const modal = document.querySelector(".modal")
+    const overlay = document.querySelector(".overlay")
+    const openModalBtn = document.querySelector(".btn-open")
+    const closeModalBtn = document.querySelector(".btn-close")
+
+    const openModal = function(){
+        modal.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    }
+    openModalBtn.addEventListener("click", openModal)
+
+    const closeModal = function(){
+        modal.classList.add("hidden")
+        overlay.classList.add("hidden")
+    }
+    closeModalBtn.addEventListener("click",closeModal)
+    
+</script>
+
+</html>
